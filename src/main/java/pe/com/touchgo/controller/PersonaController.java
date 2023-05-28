@@ -43,7 +43,7 @@ public class PersonaController {
 
         model.put("persona",persona);
 
-        return "/persona/registro";
+        return "persona/registro";
     }
 
     @RequestMapping(value = "/registro", method = RequestMethod.POST)

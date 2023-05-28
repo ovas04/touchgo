@@ -43,7 +43,7 @@ public class MascotaController {
 
         model.put("mascota",mascota);
 
-        return "/mascota/registro";
+        return "mascota/registro";
     }
 
     @RequestMapping(value = "/registro", method = RequestMethod.POST)
