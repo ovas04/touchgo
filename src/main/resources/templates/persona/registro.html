@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Persona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link th:href="@{/css/personaStyles.css}" rel="stylesheet">
+
+</head>
+<body>
+<div class="container py-6">
+<div class="col-md-12">
+    <div class="profile-info">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">Registro de Persona</h4>
+            <hr/>
+            <form th:action="@{/persona/registro}" th:object="${persona}" method="post">
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-user fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Nombre</h5>
+                        <input type="text" name="nombre" class="form-control" th:field="*{nombre}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-hard-hat fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Ocupación</h5>
+                        <input type="text" name="ocupacion" class="form-control" th:field="*{ocupacion}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-phone fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Teléfono</h5>
+                        <input type="text" name="telefono" class="form-control" th:field="*{telefono}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-home fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Dirección</h5>
+                        <input type="text" name="direccion" class="form-control" th:field="*{direccion}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-envelope fa-2x text-primary"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Correo</h5>
+                        <input type="email" name="correo" class="form-control" th:field="*{correo}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-pencil-alt fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Acerca de mi</h5>
+                        <textarea name="descripcion" class="form-control" th:field="*{descripcion}" required></textarea>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-2 text-center">
+                        <i class="fas fa-image fa-2x"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5>Foto (Enlace)</h5>
+                        <input type="url" name="foto" class="form-control" th:field="*{foto}" required>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row mb-3">
+                    <div class="col-sm-12 text-left">
+                        <input class="btn btn-primary" type="submit" value="Registrar" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

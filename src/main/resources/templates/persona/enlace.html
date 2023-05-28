@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enlace NFC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link th:href="@{/css/personaStyles.css}" rel="stylesheet">
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group-append {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #mensajeCopiado {
+            display: none;
+        }
+
+        .btn-enlace {
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container py-5">
+    <div class="card profile-card">
+        <div class="card-body">
+            <h4 class="text-center mb-4">Enlace de Persona</h4>
+            <div class="input-group mb-3">
+                <a th:text="${enlace}" class="form-control" target="_blank">https://www.example.com</a>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" onclick="copiarTexto()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mensajeCopiado" class="alert alert-success text-center" role="alert">
+                Texto copiado
+            </div>
+        </div>
+    </div>
+    <a th:href="@{'http://' + ${enlace}}" class="btn btn-enlace btn-primary" target="_blank">Ir al Enlace</a>
+</div>
+
+<script>
+    function copiarTexto() {
+        var enlaceSpan = document.querySelector(".form-control");
+        var enlaceText = enlaceSpan.innerText || enlaceSpan.textContent;
+
+        var tempInput = document.createElement("input");
+        tempInput.value = enlaceText;
+        document.body.appendChild(tempInput);
+
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+
+        var mensajeCopiado = document.getElementById("mensajeCopiado");
+        mensajeCopiado.style.display = "block";
+
+        setTimeout(function() {
+            mensajeCopiado.style.display = "none";
+        }, 2000);
+    }
+</script>
+</body>
+</html>

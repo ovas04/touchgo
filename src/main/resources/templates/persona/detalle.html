@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Perfil Personal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link th:href="@{/css/personaStyles.css}" rel="stylesheet">
+
+</head>
+<body>
+<div class="container py-5">
+    <div class="card profile-card mx-auto" style="max-width: 800px">
+        <div class="row no-gutters">
+            <div
+                    class="col-md-4 text-center d-flex flex-column justify-content-center"
+            >
+                <div class="profile-image">
+                    <img th:src="${persona.foto}" alt="profile Image" />
+                    <div class="bubble">
+                        <img
+                                src="https://cdn.logo.com/hotlink-ok/logo-social.png"
+                                alt="Bubble Image"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-info">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">
+                            Información Personal
+                        </h4>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-user fa-2x"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Nombre</h5>
+                                <p class="mb-0" th:text="${persona.nombre}">John Doe</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-hard-hat fa-2x"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Ocupación</h5>
+                                <p class="mb-0" th:text="${persona.ocupacion}">
+                                    Desarrollador Web
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-phone fa-2x"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Teléfono</h5>
+                                <p class="mb-0" th:text="${persona.telefono}">
+                                    +52 1234567890
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-home fa-2x"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Dirección</h5>
+                                <p class="mb-0" th:text="${persona.direccion}">
+                                    1234 Calle Principal, Ciudad, País
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-envelope fa-2x text-primary"></i>
+                            </div>
+
+                            <div class="col-sm-10">
+                                <h5>Correo</h5>
+                                <p class="mb-0 " th:text="${persona.correo}">correo@example.com</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-pencil-alt fa-2x"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Acerca de mi</h5>
+                                <p class="mb-0" th:text="${persona.descripcion}">
+                                    Soy un desarrollador web apasionado por las tecnologías
+                                    más recientes...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center social-links py-3">
+            <a href="#"
+            ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#"
+            ><i class="fab fa-github"></i
+            ></a>
+            <a href="#"
+            ><i class="fab fa-telegram-plane"></i
+            ></a>
+            <a href="#"
+            ><i class="fab fa-whatsapp"></i
+            ></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
