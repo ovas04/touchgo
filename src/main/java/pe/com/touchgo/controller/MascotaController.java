@@ -23,9 +23,6 @@ public class MascotaController {
     @Value("${SERVER}")
     private String serverAddress;
 
-    @Value("${PORT}")
-    private String serverport;
-
     @RequestMapping(value = "/detalle/{id}",method = RequestMethod.GET)
     public String mostrarDatosMascota(@PathVariable(value = "id") Long id, Map<String, Object> model) {
 

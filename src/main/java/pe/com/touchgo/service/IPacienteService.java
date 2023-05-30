@@ -4,6 +4,8 @@ import pe.com.touchgo.domain.Paciente;
 
 public interface IPacienteService {
 
-    void formarUrlPaciente(Paciente paciente);
+    Paciente findByID(Long id);
+
+    Paciente savePaciente(Paciente paciente);
 
 }

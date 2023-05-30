@@ -1,0 +1,102 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Perfil Médico del Paciente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link th:href="@{/css/personaStyles.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+    <div class="card profile-card mx-auto" style="max-width: 800px">
+        <div class="row no-gutters">
+            <div class="col-md-4 text-center d-flex flex-column justify-content-center">
+                <div class="profile-image">
+                    <img th:src="${paciente.foto}" alt="Profile Image" />
+                    <div class="bubble">
+                        <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Bubble Image" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-info">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">Información Médica del Paciente</h4>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-user fa-2x text-primary"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Nombre</h5>
+                                <p class="mb-0" th:text="${paciente.nombre}">John Doe</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-tint fa-2x text-danger"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Tipo de Sangre</h5>
+                                <p class="mb-0" th:text="${paciente.tipoSangre}">O+</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-phone fa-2x text-success"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Teléfono de Emergencia</h5>
+                                <p class="mb-0" th:text="${paciente.telefonoEmergencia}">+52 9876543210</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-home fa-2x text-info"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Dirección</h5>
+                                <p class="mb-0" th:text="${paciente.direccion}">1234 Calle Principal, Ciudad, País</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-allergies fa-2x text-warning"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Alergias</h5>
+                                <p class="mb-0" th:text="${paciente.alergia}">Ninguna</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-procedures fa-2x text-secondary"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Enfermedades</h5>
+                                <p class="mb-0" th:text="${paciente.enfermedad}">Ninguna</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row mb-3">
+                            <div class="col-sm-2 text-center">
+                                <i class="fas fa-notes-medical fa-2x text-primary"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5>Historial Clínico</h5>
+                                <p class="mb-0" th:text="${paciente.historial}">Historial clínico completo...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
