@@ -21,12 +21,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("https://i.ibb.co/XL5Ccmw/tyg.png");
+    background-image: url("https://drive.google.com/uc?export=view&id=121_a8TUnIrDeZxmqFib6luF-dejlcezz");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.06; /* Ajusta esto para cambiar la opacidad de la marca de agua */
-    z-index: 1; /* Asegura que la marca de agua está detrás del contenido de la tarjeta */
+    opacity: 0.1;
+    z-index: 1;
 }
 .profile-image {
     position: relative;
@@ -38,15 +38,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #ff6b6b; /* Añadimos un borde sólido de 3px y color rojo claro */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añadimos un poco más de sombra para realzar el borde */
+    border: 3px solid #ff6b6b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%; /* Aseguramos que la imagen tenga el mismo borde redondeado que el contenedor */
+    border-radius: 50%;
 }
 
 .profile-info {
@@ -56,7 +56,7 @@ body {
             255,
             255,
             0.8
-    ); /* fondo semitransparente para hacer el texto más legible */
+    );
 }
 .social-links {
     font-size: 2em;
@@ -64,7 +64,6 @@ body {
 .social-links a {
     margin: 0 10px;
 }
-/* Iconos de colores */
 .fas.fa-user {
     color: #007bff;
 }
@@ -80,7 +79,6 @@ body {
 .fas.fa-pencil-alt {
     color: #17a2b8;
 }
-/* Colores de iconos sociales */
 .fab.fa-linkedin-in {
     color: #0077b5;
 }
