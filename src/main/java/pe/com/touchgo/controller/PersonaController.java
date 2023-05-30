@@ -63,7 +63,7 @@ public class PersonaController {
     @RequestMapping(value = "/enlace/{id}",method = RequestMethod.GET)
     public String mostrarEnlace(@PathVariable(value = "id") Long id, Map<String, Object> model) {
 
-        String url = serverAddress + ":" + serverport + "/persona/detalle/" + id.toString();
+        String url = serverAddress  + "/persona/detalle/" + id.toString();
 
         model.put("enlace", url);
 
