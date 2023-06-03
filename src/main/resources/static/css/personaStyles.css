@@ -21,7 +21,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("https://drive.google.com/uc?export=view&id=121_a8TUnIrDeZxmqFib6luF-dejlcezz");
+    background-image: url("https://touchandgo.s3.amazonaws.com/logo3.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -92,7 +92,8 @@ body {
     color: #25d366;
 }
 .bubble {
-
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: absolute;
     bottom: -25px;
     right: -25px;
