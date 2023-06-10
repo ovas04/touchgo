@@ -67,9 +67,11 @@
                             </div>
                             <div class="col-sm-10">
                                 <h5>Teléfono</h5>
-                                <p class="mb-0" th:text="${persona.telefono}">
-                                    +52 1234567890
-                                </p>
+                                <a href="tel:${persona.telefono}">
+                                    <p class="mb-0" th:text="${persona.telefono}">
+                                        +52 1234567890
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         <hr/>
