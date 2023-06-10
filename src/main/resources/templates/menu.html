@@ -10,7 +10,7 @@
 <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-6">
     <div class="row w-100 bg-primary text-white text-center mb-4 py-2">
         <div class="col">
-            <h2>Registros</h2>
+            <h2>Menu Principal</h2>
         </div>
     </div>
     <div class="row">
@@ -27,6 +27,16 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <a th:href="@{'http://' + ${urlPaciente}}" class="btn btn-primary btn-lg btn-block">
                 <i class="fas fa-hospital-user fa-2x"></i><br/> Pacientes
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a th:href="@{'http://' + ${urlProductos}}" class="btn btn-primary btn-lg btn-block">
+                <i class="fas fa-shopping-cart fa-2x"></i><br/> Productos
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a th:href="@{'http://' + ${urlDispositivos}}" class="btn btn-primary btn-lg btn-block">
+                <i class="fas fa-mobile-alt fa-2x"></i><br/> Dispositivos Compatibles
             </a>
         </div>
     </div>
