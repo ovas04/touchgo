@@ -77,7 +77,7 @@
                             </div>
                             <div class="col-sm-10">
                                 <h5>Teléfono 1</h5>
-                                <a href="tel:${mascota.telefono1}">
+                                <a th:href="'tel:' + ${mascota.telefono1}">
                                     <p class="mb-0" th:text="${mascota.telefono1}">
                                     +52 1234567890
                                     </p>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-sm-10">
                                 <h5>Teléfono 2</h5>
-                                <a href="tel:${mascota.telefono2}">
+                                <a th:href="'tel:' + ${mascota.telefono2}">
                                     <p class="mb-0" th:text="${mascota.telefono2}">
                                     +52 0987654321
                                     </p>
