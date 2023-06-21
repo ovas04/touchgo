@@ -84,6 +84,9 @@
                                 <h5>Dirección</h5>
                                 <p class="mb-0" th:text="${persona.direccion}">
                                     1234 Calle Principal, Ciudad, País
+                                <a th:href="'https://www.google.com/maps?q=' + ${persona.direccion}"> 
+                                    <img src="https://static-00.iconduck.com/assets.00/google-maps-old-icon-512x512-5baetapg.png" style="width:30px; height:30px">
+                                </a>
                                 </p>
                             </div>
                         </div>
