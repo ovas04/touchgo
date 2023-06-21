@@ -61,7 +61,9 @@
                             </div>
                             <div class="col-sm-10">
                                 <h5>Dirección</h5>
-                                <p class="mb-0" th:text="${paciente.direccion}">1234 Calle Principal, Ciudad, País</p>
+                                <a th:href="'https://www.google.com/maps?q=' + ${paciente.direccion}">
+                                    <p class="mb-0" th:text="${paciente.direccion}">1234 Calle Principal, Ciudad, País</p>
+                                </a>
                             </div>
                         </div>
                         <hr/>
