@@ -13,6 +13,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    paths:
+      - '**'
+      - '.github/workflows/touch-go-AutoDeployTrigger-a4ebca7e-e14a-4a7b-ad48-67e319bd7384.yml'
+
+  workflow_dispatch:
 
 jobs:
   build:
@@ -76,3 +81,26 @@ jobs:
       - name: Push image
         run: |
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/touch-go:${{ github.run_number }}
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-push-azure
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.TOUCHGO_AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          appSourcePath: ${{ github.workspace }}
+          registryUrl: crtouchgo.azurecr.io
+          registryUsername: ${{ secrets.TOUCHGO_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.TOUCHGO_REGISTRY_PASSWORD }}
+          containerAppName: touch-go
+          resourceGroup: rg_touchgo
+          imageToBuild: crtouchgo.azurecr.io/touch-go:${{ github.sha }}
