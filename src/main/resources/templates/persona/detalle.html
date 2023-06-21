@@ -95,7 +95,9 @@
 
                             <div class="col-sm-10">
                                 <h5>Correo</h5>
-                                <p class="mb-0 " th:text="${persona.correo}">correo@example.com</p>
+                                <a th:href="'mailto:' + ${persona.correo}">
+                                    <p class="mb-0 " th:text="${persona.correo}">correo@example.com</p>
+                                </a>
                             </div>
                         </div>
                         <hr/>
