@@ -20,7 +20,7 @@
     <div class="col-md-12">
         <div class="profile-info">
             <div class="card-body">
-                <h4 class="card-title text-center mb-4">Registro de Mascota</h4>
+                <h4 class="card-title text-center mb-4">Registro de Producto</h4>
                 <hr/>
                 <form th:action="@{/producto/registro}" th:object="${producto}" method="post">
                     <div class="row mb-3">
@@ -28,7 +28,7 @@
                             <i class="fas fa-dog fa-2x"></i>
                         </div>
                         <div class="col-sm-10">
-                            <h5>Nombre</h5>
+                            <h5>Producto</h5>
                             <input type="text" name="nombre" class="form-control" th:field="*{nombre}" required>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                             <i class="fas fa-paw fa-2x"></i>
                         </div>
                         <div class="col-sm-10">
-                            <h5>Raza</h5>
+                            <h5>Tipo</h5>
                             <input type="text" name="tipo" class="form-control" th:field="*{tipo}" required>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <i class="fas fa-phone fa-2x"></i>
                         </div>
                         <div class="col-sm-10">
-                            <h5>Teléfono 1</h5>
+                            <h5>Propiedades</h5>
                             <input type="text" name="propiedades" class="form-control" th:field="*{propiedades}" required>
                         </div>
                     </div>
@@ -58,8 +58,16 @@
                             <i class="fas fa-phone fa-2x"></i>
                         </div>
                         <div class="col-sm-10">
-                            <h5>Teléfono 2</h5>
+                            <h5>Descripcion</h5>
                             <input type="text" name="descripcion" class="form-control" th:field="*{descripcion}">
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-12 text-left">
+                            <input class="btn btn-primary" type="submit" value="Registrar" />
                         </div>
                     </div>
 
