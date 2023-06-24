@@ -1,0 +1,42 @@
+name: Trigger auto deployment for ca-touchgo
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ main ]
+    paths:
+    - '**'
+    - '.github/workflows/ca-touchgo-AutoDeployTrigger-38a2e5f9-1d7e-4879-9a1b-88ab99e12372.yml'
+
+  # Allow mannually trigger 
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.CATOUCHGO_AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          appSourcePath: ${{ github.workspace }} 
+          registryUrl: docker.io
+          registryUsername: ${{ secrets.CATOUCHGO_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.CATOUCHGO_REGISTRY_PASSWORD }}
+          containerAppName: ca-touchgo
+          resourceGroup: rg_student
+          imageToBuild: ovas04/ca-touchgo:${{ github.sha }}
+          dockerfilePath: Dockerfile
+
+     
+
