@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Perfil Mascota</title>
+  <title>Perfil Producto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link
           rel="stylesheet"
@@ -22,21 +22,13 @@
       <div
               class="col-md-4 text-center d-flex flex-column justify-content-center"
       >
-        <div class="profile-image">
-          <img th:src="${mascota.foto}" alt="profile Image" />
-          <div class="bubble">
-            <img
-                    src="https://touchandgo.s3.amazonaws.com/logo3.png"
-                    alt="Bubble Image"
-            />
-          </div>
-        </div>
+
       </div>
       <div class="col-md-8">
         <div class="profile-info">
           <div class="card-body">
             <h4 class="card-title text-center mb-4">
-              Información Producto
+              Informacion Producto
             </h4>
             <hr/>
             <div class="row mb-3">
@@ -65,7 +57,7 @@
               </div>
               <div class="col-sm-10">
                 <h5>Propiedades</h5>
-                <a th:href="'https://www.google.com/maps?q=' + ${mascota.direccion}">
+                <a th:href="'https://www.google.com/maps?q=' + ${producto.propiedades}">
                   <p class="mb-0" th:text="${producto.propiedades}">
                     1234 Calle Principal, Ciudad, País
                   </p>
@@ -73,9 +65,13 @@
               </div>
             </div>
             <hr/>
+            <div class="row mb-3">
+              <div class="col-sm-2 text-center">
+                <i class="fas fa-home fa-2x"></i>
+              </div>
             <div class="col-sm-10">
               <h5>Descripcion</h5>
-              <a th:href="'https://www.google.com/maps?q=' + ${mascota.direccion}">
+              <a th:href="'https://www.google.com/maps?q=' + ${producto.descripcion}">
                 <p class="mb-0" th:text="${producto.descripcion}">
                   1234 Calle Principal, Ciudad, País
                 </p>
