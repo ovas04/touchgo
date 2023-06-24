@@ -19,18 +19,18 @@ public class Producto {
     @Column(name = "propiedades")
     private String propiedades;
 
-    @Column(name = "descipcion")
-    private String descipcion;
+    @Column(name = "descripcion")
+    private String descripcion;
 
     public Producto() {
     }
 
-    public Producto(Long id, String nombre, String tipo, String propiedades, String descipcion) {
+    public Producto(Long id, String nombre, String tipo, String propiedades, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
         this.propiedades = propiedades;
-        this.descipcion = descipcion;
+        this.descripcion = descripcion;
     }
 
     public Long getId() {
@@ -65,11 +65,11 @@ public class Producto {
         this.propiedades = propiedades;
     }
 
-    public String getDescipcion() {
-        return descipcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescipcion(String descipcion) {
-        this.descipcion = descipcion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
