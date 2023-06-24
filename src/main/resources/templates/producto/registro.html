@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Producto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link th:href="@{/css/personaStyles.css}" rel="stylesheet">
+
+</head>
+<body style="background: url('https://i0.wp.com/revista.lamardeonuba.es/wp-content/uploads/2021/05/chip1.gif?fit=500%2C281&ssl=1');">
+<div class="container py-6">
+    <div class="col-md-12">
+        <div class="profile-info">
+            <div class="card-body">
+                <h4 class="card-title text-center mb-4">Registro de Mascota</h4>
+                <hr/>
+                <form th:action="@{/producto/registro}" th:object="${producto}" method="post">
+                    <div class="row mb-3">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-dog fa-2x"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h5>Nombre</h5>
+                            <input type="text" name="nombre" class="form-control" th:field="*{nombre}" required>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-paw fa-2x"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h5>Raza</h5>
+                            <input type="text" name="tipo" class="form-control" th:field="*{tipo}" required>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h5>Teléfono 1</h5>
+                            <input type="text" name="propiedades" class="form-control" th:field="*{propiedades}" required>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row mb-3">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h5>Teléfono 2</h5>
+                            <input type="text" name="descripcion" class="form-control" th:field="*{descripcion}">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
