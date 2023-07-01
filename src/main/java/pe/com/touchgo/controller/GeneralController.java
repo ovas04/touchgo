@@ -34,11 +34,13 @@ public class GeneralController {
         String urlMascota = serverAddress  + "/mascota/registro";
         String urlPaciente = serverAddress  + "/paciente/registro";
         String urlDispositivos = serverAddress  + "/dispositivos";
+        String urlProducto = serverAddress  + "/producto/registro";
 
         model.addAttribute("urlPersona", urlPersona);
         model.addAttribute("urlMascota", urlMascota);
         model.addAttribute("urlPaciente", urlPaciente);
         model.addAttribute("urlDispositivos", urlDispositivos);
+        model.addAttribute("urlProducto", urlProducto);
 
         return "menu";
     }
